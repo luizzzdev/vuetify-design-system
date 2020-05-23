@@ -1,0 +1,25 @@
+image: node:10.15.3
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Build
+          caches:
+            - node
+          script:
+            - yarn install
+            - yarn build --mode staging
+            - tar -czf dist.tar.gz dist/
+          artifacts:
+            - dist/**
+            - dist.tar.gz
+      - step:
+          name: Deploy
+          deployment: staging
+          script:
+            - pipe: atlassian/heroku-deploy:1.1.3
+              variables:
+                HEROKU_API_KEY: $HEROKU_API_KEY
+                HEROKU_APP_NAME: 'nexo-design-system'
+                ZIP_FILE: 'dist.tar.gz'
