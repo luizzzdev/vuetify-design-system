@@ -1,4 +1,4 @@
 module.exports = {
   transpileDependencies: ['vuetify'],
-  assetsDir: '/vuetify-design-system',
+  publicPath: '/vuetify-design-system',
 };
