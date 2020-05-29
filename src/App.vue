@@ -58,6 +58,12 @@
         </div>
       </v-row>
 
+      <h1>Typography</h1>
+      <typography />
+
+      <h1>Form</h1>
+      <forms></forms>
+
       <h1>Buttons</h1>
       <buttons />
     </v-container>
@@ -67,11 +73,15 @@
 <script lang="ts">
 import Vue from 'vue';
 import Buttons from '@/components/Buttons.vue';
+import Typography from '@/components/Typography.vue';
+import Forms from "@/components/Forms.vue";
 
 export default Vue.extend({
   name: 'App',
 
   components: {
+    Forms,
+    Typography,
     Buttons,
   },
 
@@ -82,3 +92,15 @@ export default Vue.extend({
   methods: {},
 });
 </script>
+
+<style>
+/*@font-face {*/
+/*  font-family: Inter;*/
+/*  src: url('assets/Inter-Black.otf') format('opentype');*/
+/*}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+</style>
+
+<style lang="sass">
+</style>
