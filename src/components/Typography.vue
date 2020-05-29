@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <v-container>
     <h1>Hello world - h1</h1>
-    <h2>Hello world - h2 </h2>
-    <h3>Hello world</h3>
-    <h5>Hello world</h5>
-    <h6>Hello world</h6>
-    <p>Hello world</p>
+    <h2>Hello world - h2</h2>
+    <h3>Hello world - h3</h3>
+    <h4>Hello world - h4</h4>
+    <h5>Hello world - h5</h5>
+    <p>Hello world - p</p>
+    <span>Hello world - span</span>
 
-    <p class="font-weight-light">Hello world</p>
-    <p class="font-italic">Hello world</p>
-
-    <p
-      v-for="classString in styleAndWeightClasses"
-      :class="classString"
-      :key="classString"
-    >
-      Hello world - {{ classString }}
-    </p>
-  </div>
+    <v-row>
+      <v-col
+        cols="6"
+        v-for="classString in styleAndWeightClasses"
+        :key="classString"
+      >
+        <p :class="classString" class="my-0">Hello world - {{ classString }}</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
