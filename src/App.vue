@@ -18,29 +18,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { routes } from '@/router';
 
 export default Vue.extend({
   name: 'App',
 
   data: () => ({
-    routes: [
-      {
-        to: 'colors',
-        title: 'Colors',
-      },
-      {
-        to: 'buttons',
-        title: 'Buttons',
-      },
-      {
-        to: 'typography',
-        title: 'Typography',
-      },
-      {
-        to: 'forms',
-        title: 'Forms',
-      },
-    ],
+    routes: routes.map(r => ({
+      to: r.name,
+      title: r.name,
+    })),
   }),
 
   methods: {},

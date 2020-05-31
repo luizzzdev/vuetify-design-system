@@ -25,6 +25,11 @@ const routes: Array<RouteConfig> = [
     name: 'forms',
     component: () => import('../views/Forms'),
   },
+  {
+    path: '/dialogs',
+    name: 'dialogs',
+    component: () => import('../views/Dialog'),
+  },
 ];
 
 const router = new VueRouter({
@@ -32,3 +37,7 @@ const router = new VueRouter({
 });
 
 export default router;
+
+export {
+  routes
+}

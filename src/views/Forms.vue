@@ -1,23 +1,48 @@
 <template>
-  <div>
-    <div v-for="variant in variants" :key="variant">
-      <v-text-field value="Hello" />
-      <v-text-field placeholder="Regular" v-bind="getTypes(variant)" />
-      <v-text-field label="Regular" v-bind="getTypes(variant)" />
-      <v-text-field value="Hello" v-bind="getTypes(variant)" />
-      <v-text-field
-        placeholder="Regular"
-        value="Hello"
-        v-bind="getTypes(variant)"
-      />
-      <v-text-field label="Regular" value="Hello" v-bind="getTypes(variant)" />
-      <v-text-field
-        label="Label"
-        placeholder="Placeholder"
-        v-bind="getTypes(variant)"
-      />
-    </div>
-  </div>
+  <v-container>
+    <v-row v-for="variant in variants" :key="variant">
+      <v-col cols="12">
+        <h4 class="text-uppercase">{{variant}}</h4>
+      </v-col>
+      <v-col cols="3">
+        <span class="caption">placeholder</span>
+        <v-text-field placeholder="Regular" v-bind="getTypes(variant)" />
+      </v-col>
+
+      <v-col cols="3">
+        <span class="caption">label</span>
+        <v-text-field label="Regular" v-bind="getTypes(variant)" />
+      </v-col>
+      <v-col cols="3">
+        <span class="caption">value</span>
+        <v-text-field value="Hello" v-bind="getTypes(variant)" />
+      </v-col>
+      <v-col cols="3">
+        <span class="caption">placeholder + value</span>
+        <v-text-field
+          placeholder="Regular"
+          value="Hello"
+          v-bind="getTypes(variant)"
+        />
+      </v-col>
+      <v-col cols="3">
+        <span class="caption">label + value</span>
+        <v-text-field
+          label="Regular"
+          value="Hello"
+          v-bind="getTypes(variant)"
+        />
+      </v-col>
+      <v-col cols="3">
+        <span class="caption">label + placeholder</span>
+        <v-text-field
+          label="Label"
+          placeholder="Placeholder"
+          v-bind="getTypes(variant)"
+        />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
