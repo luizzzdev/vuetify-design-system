@@ -8,27 +8,27 @@ const routes: Array<RouteConfig> = [
   {
     path: '/buttons',
     name: 'buttons',
-    component: () => import('../components/Buttons'),
+    component: () => import('../components/Buttons.vue'),
   },
   {
     path: '/typography',
     name: 'typography',
-    component: () => import('../components/Typography'),
+    component: () => import('../components/Typography.vue'),
   },
   {
     path: '/colors',
     name: 'colors',
-    component: () => import('../views/Colors'),
+    component: () => import('../views/Colors.vue'),
   },
   {
     path: '/forms',
     name: 'forms',
-    component: () => import('../views/Forms'),
+    component: () => import('../views/Forms.vue'),
   },
   {
     path: '/dialogs',
     name: 'dialogs',
-    component: () => import('../views/Dialog'),
+    component: () => import('../views/Dialog.vue'),
   },
 ];
 
